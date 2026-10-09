@@ -1,25 +1,25 @@
+import { EditableText } from "@getrefino/react";
+
 const PRICE = 12;
 
 export default function Home() {
   return (
     <main>
       <section className="hero">
-        <h1>Plan the trip, not the spreadsheet.</h1>
-        <p>Lanternfield keeps your group&rsquo;s camping plans in one calm place.</p>
-        <a className="cta" href="#pricing">
-          See plans
-        </a>
+        <EditableText id="home.hero.title" as="h1" />
+        <EditableText id="home.hero.body" as="p" />
+        <EditableText id="home.hero.cta" as="a" className="cta" href="#pricing" />
       </section>
       <section id="pricing">
-        <h2>Simple pricing</h2>
+        <EditableText id="home.pricing.title" as="h2" />
         <p>
           One plan, ${PRICE} a month, for the whole group.
         </p>
       </section>
       <section id="faq">
-        <h2>Questions</h2>
-        <h3>Do I need an app?</h3>
-        <p>No. Everything works in the browser on any phone.</p>
+        <EditableText id="home.faq.title" as="h2" />
+        <EditableText id="home.faq.heading" as="h3" />
+        <EditableText id="home.faq.body" as="p" />
       </section>
     </main>
   );

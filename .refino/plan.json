@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-09T21:21:40.316Z",
+  "tool": {
+    "name": "refino",
+    "version": "0.3.0"
+  },
+  "repository": {
+    "root": ".",
+    "appRoot": ".",
+    "framework": "next",
+    "router": "next-app",
+    "language": "typescript",
+    "packageManager": "npm",
+    "react": "19.3.0",
+    "next": "16.3.4",
+    "scripts": {
+      "build": "build",
+      "typecheck": "typecheck",
+      "lint": "lint",
+      "dev": "dev"
+    },
+    "git": {
+      "isRepository": true,
+      "branch": "main",
+      "defaultBranch": "main",
+      "clean": true,
+      "remote": "https://github.com/forant/forant.github.io.git",
+      "github": {
+        "owner": "forant",
+        "repo": "forant.github.io"
+      }
+    },
+    "hosting": null,
+    "auth": [],
+    "server": "static",
+    "serverNotes": [
+      "next.config.mjs sets output: \"export\": the site is exported as static HTML. Route handlers, cookies() and dynamic rendering are not available."
+    ]
+  },
+  "scope": {
+    "routes": [
+      "/"
+    ],
+    "includeShared": true,
+    "description": "/ plus shared chrome (layouts, navigation, footer)."
+  },
+  "contentFile": {
+    "path": "content/copy.json",
+    "exists": false
+  },
+  "configFile": {
+    "path": "refino.config.json",
+    "exists": false
+  },
+  "integration": {
+    "provider": {
+      "file": "app/layout.tsx",
+      "strategy": "refino-hosted",
+      "notes": [
+        "Render <CopyEditing content={copy}> from refino/copy-editing.tsx around everything app/layout.tsx renders; pass no editing prop. Edit mode is decided in the browser from the Refino editor session, so the server never reads cookies and pages can stay static."
+      ]
+    },
+    "endpoint": {
+      "path": "https://app.refino.dev/api/sites/site_543afcdfebad47f7a27a741357ba2150/copy",
+      "kind": "refino-hosted",
+      "notes": [
+        "Refino hosts the copy API: the browser loads and saves through it with a short-lived editor token, and Refino commits to the repository through the Refino GitHub App. This deployment holds no editor password, no session secret, no repository token and no copy adapter, and needs no server functions; it works as a static export on any host."
+      ]
+    },
+    "host": {
+      "kind": "refino-hosted",
+      "provider": null,
+      "generated": true,
+      "copyEndpoint": "https://app.refino.dev/api/sites/site_543afcdfebad47f7a27a741357ba2150/copy",
+      "sessionEndpoint": "https://app.refino.dev/api/editor/token",
+      "notes": [
+        "Refino hosts the copy API: the browser loads and saves through it with a short-lived editor token, and Refino commits to the repository through the Refino GitHub App. This deployment holds no editor password, no session secret, no repository token and no copy adapter, and needs no server functions; it works as a static export on any host.",
+        "Owners start editing at this site's /edit, which sends them to https://app.refino.dev to sign in; the site must be registered there with exactly this deployment's origin (scheme, host, port) or authorization is refused."
+      ]
+    },
+    "auth": {
+      "strategy": "refino-hosted",
+      "existing": [],
+      "notes": [
+        "Owners sign in to Refino (GitHub) and Refino authorizes this site per request; the site has no login of its own."
+      ]
+    },
+    "persistence": {
+      "local": {
+        "adapter": "none (Refino writes to the repository)",
+        "filePath": "content/copy.json"
+      },
+      "github": {
+        "adapter": "Refino (credential stored per site in Refino)",
+        "envVars": []
+      }
+    },
+    "boilerplateDir": "refino"
+  },
+  "refino": {
+    "siteId": "site_543afcdfebad47f7a27a741357ba2150",
+    "appUrl": "https://app.refino.dev",
+    "installMethod": "claude"
+  },
+  "copy": [
+    {
+      "id": "home.hero.title",
+      "text": "Plan the trip, not the spreadsheet.",
+      "file": "app/page.tsx",
+      "line": 7,
+      "column": 13,
+      "source": "jsx-text",
+      "element": "h1",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.hero.body",
+      "text": "Lanternfield keeps your group’s camping plans in one calm place.",
+      "file": "app/page.tsx",
+      "line": 8,
+      "column": 12,
+      "source": "jsx-text",
+      "element": "p",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.hero.cta",
+      "text": "See plans",
+      "file": "app/page.tsx",
+      "line": 10,
+      "column": 11,
+      "source": "jsx-text",
+      "element": "a",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.pricing.title",
+      "text": "Simple pricing",
+      "file": "app/page.tsx",
+      "line": 14,
+      "column": 13,
+      "source": "jsx-text",
+      "element": "h2",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.pricing.body",
+      "text": "One plan, $",
+      "file": "app/page.tsx",
+      "line": 16,
+      "column": 11,
+      "source": "jsx-text",
+      "element": "p",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "dynamic",
+      "status": "unsupported",
+      "reason": "A sentence assembled at runtime with {PRICE} from code (a price, a trial length, a product name, ...). Those values keep their single source of truth in code, so the sentence is left in code rather than editable; never copy the value into the text to make it editable."
+    },
+    {
+      "id": "home.pricing.body2",
+      "text": "a month, for the whole group.",
+      "file": "app/page.tsx",
+      "line": 16,
+      "column": 30,
+      "source": "jsx-text",
+      "element": "p",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "dynamic",
+      "status": "unsupported",
+      "reason": "A sentence assembled at runtime with {PRICE} from code (a price, a trial length, a product name, ...). Those values keep their single source of truth in code, so the sentence is left in code rather than editable; never copy the value into the text to make it editable."
+    },
+    {
+      "id": "home.faq.title",
+      "text": "Questions",
+      "file": "app/page.tsx",
+      "line": 20,
+      "column": 13,
+      "source": "jsx-text",
+      "element": "h2",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.faq.heading",
+      "text": "Do I need an app?",
+      "file": "app/page.tsx",
+      "line": 21,
+      "column": 13,
+      "source": "jsx-text",
+      "element": "h3",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "home.faq.body",
+      "text": "No. Everything works in the browser on any phone.",
+      "file": "app/page.tsx",
+      "line": 22,
+      "column": 12,
+      "source": "jsx-text",
+      "element": "p",
+      "key": null,
+      "component": "Home",
+      "scope": "/",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "shared.footer.body",
+      "text": "Made for teams who would rather be outside.",
+      "file": "components/Footer.tsx",
+      "line": 4,
+      "column": 10,
+      "source": "jsx-text",
+      "element": "p",
+      "key": null,
+      "component": "Footer",
+      "scope": "shared",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "shared.nav.lanternfield",
+      "text": "Lanternfield",
+      "file": "components/Header.tsx",
+      "line": 7,
+      "column": 9,
+      "source": "jsx-text",
+      "element": "Link",
+      "key": null,
+      "component": "Header",
+      "scope": "shared",
+      "classification": "visible-text",
+      "status": "needs-review",
+      "reason": "Looks like a brand name or logo (inside an element with class \"logo\"). A wordmark is usually not edited as copy: migrate it only if the owner wants to change it, otherwise leave it in code."
+    },
+    {
+      "id": "shared.nav.pricing",
+      "text": "Pricing",
+      "file": "components/Header.tsx",
+      "line": 10,
+      "column": 28,
+      "source": "jsx-text",
+      "element": "a",
+      "key": null,
+      "component": "Header",
+      "scope": "shared",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    },
+    {
+      "id": "shared.nav.questions",
+      "text": "Questions",
+      "file": "components/Header.tsx",
+      "line": 11,
+      "column": 24,
+      "source": "jsx-text",
+      "element": "a",
+      "key": null,
+      "component": "Header",
+      "scope": "shared",
+      "classification": "visible-text",
+      "status": "selected",
+      "reason": "Plain text inside a rendered element."
+    }
+  ],
+  "summary": {
+    "selected": 10,
+    "needsReview": 1,
+    "unsupported": 2,
+    "excluded": 0,
+    "byScope": {
+      "/": 7,
+      "shared": 4
+    },
+    "byFile": {
+      "app/page.tsx": 7,
+      "components/Footer.tsx": 1,
+      "components/Header.tsx": 3
+    }
+  },
+  "files": [
+    {
+      "path": ".refino/plan.json",
+      "action": "create",
+      "description": "Machine-readable migration plan for coding agents."
+    },
+    {
+      "path": ".refino/AGENT_INSTRUCTIONS.md",
+      "action": "create",
+      "description": "Repository-specific instructions for a coding agent."
+    },
+    {
+      "path": "content/copy.json",
+      "action": "create",
+      "description": "Canonical copy file with the selected strings."
+    },
+    {
+      "path": "refino.config.json",
+      "action": "create",
+      "description": "Tells refino verify where the content file and endpoint live."
+    },
+    {
+      "path": "package.json",
+      "action": "modify",
+      "description": "Add @getrefino/core and @getrefino/react to dependencies (no @getrefino/github: Refino writes to the repository)."
+    },
+    {
+      "path": "refino/",
+      "action": "create",
+      "description": "Public Refino constants, the browser-side authorization client, the provider wrapper and the /edit page component (skipped for files that already exist). No secrets, no server code."
+    },
+    {
+      "path": "app/edit/layout.tsx",
+      "action": "create",
+      "description": "Marks /edit noindex (the client page cannot export metadata)."
+    },
+    {
+      "path": "app/edit/page.tsx",
+      "action": "create",
+      "description": "/edit: sends the owner to Refino and finishes the authorization (client component, works as a static export)."
+    }
+  ],
+  "verification": {
+    "commands": [
+      "npm run typecheck",
+      "npm run lint",
+      "npm run build"
+    ],
+    "cli": "npx @getrefino/cli verify --run"
+  },
+  "unresolved": [
+    "1 candidate(s) need a human or agent decision on naming or inclusion (status \"needs-review\").",
+    "2 string(s) mix markup or interpolation and are not plain text (status \"unsupported\"). Split them or leave them in code."
+  ]
+}

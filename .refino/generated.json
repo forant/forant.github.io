@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "tool": "0.3.0",
+  "files": {
+    "app/edit/layout.tsx": {
+      "ownership": "machine",
+      "toolVersion": "0.3.0",
+      "sha256": "d25ae76ebae019c51d3a6e1e8410c842c43adc18e056e08cd6c7c39056143784"
+    },
+    "app/edit/page.tsx": {
+      "ownership": "machine",
+      "toolVersion": "0.3.0",
+      "sha256": "e364a74112e15b8e483c8baa1e26e714aa293e5c52700335d30ad2ffb5b278b5"
+    },
+    "refino/copy-editing.tsx": {
+      "ownership": "machine",
+      "toolVersion": "0.3.0",
+      "sha256": "2730a5a10f6bdfe2fa28319afb35a4dd7ea37a16a3d93eee4961426387b6bc7d"
+    },
+    "refino/edit-page.tsx": {
+      "ownership": "scaffold",
+      "toolVersion": "0.3.0",
+      "sha256": "6923d539cd879006d55dec2ab5c0584b4686a2d34fd013d20bc578dab4f1a678"
+    },
+    "refino/refino-client.ts": {
+      "ownership": "machine",
+      "toolVersion": "0.3.0",
+      "sha256": "69aa00b08d0f30d276adfd8ab1d5cb0bcd0d5cfb3475663d9dfa33041e3c49f3"
+    },
+    "refino/refino-site.ts": {
+      "ownership": "machine",
+      "toolVersion": "0.3.0",
+      "sha256": "d9aaa39e26cc398bd3bdd95bdac8b759c81abd8386ee9b6efc88ad80239f8d8d"
+    }
+  }
+}

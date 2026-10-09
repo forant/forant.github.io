@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "contentFile": "content/copy.json",
+  "endpoint": "https://app.refino.dev/api/sites/site_543afcdfebad47f7a27a741357ba2150/copy",
+  "sessionEndpoint": "https://app.refino.dev/api/editor/token",
+  "refino": {
+    "siteId": "site_543afcdfebad47f7a27a741357ba2150",
+    "appUrl": "https://app.refino.dev",
+    "installMethod": "claude"
+  },
+  "framework": "next",
+  "router": "next-app",
+  "routes": [
+    "/"
+  ]
+}
